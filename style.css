@@ -175,13 +175,16 @@ article p.date {
 .packages {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin: 30px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .package {
   display: flex;
   justify-content: space-evenly;
   margin: 20px;
+  padding: 20px;
   align-items: center;
 }
 
@@ -225,6 +228,13 @@ article p.date {
 
 .about .content {
   align-items: center;
+}
+
+.about img {
+  width: 40%;
+  height: 40%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .about .content .bio {
@@ -326,4 +336,12 @@ input[type="submit"] {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.investment-page {
+  background-image: url("./image/background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  z-index: 0;
 }
