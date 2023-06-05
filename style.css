@@ -22,47 +22,114 @@
   font-weight: lighter;
 }
 
-
-body {
-  margin: 0;
-}
+/* START OF HEADER */
 
 .overlay {
   display: flex;
+  align-items: center;
   width: 100%;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.0);
   position: fixed;
   top: 0;
   left: 0;
-  justify-content: center;
+  padding: 20px;
 }
 
-/* .overlay:hover {
-  background-color: rgba(34, 33, 33, 0.1);
-} */
 
-nav ul {
-  font-family: "Sangu", sans-serif;
-  font-size: 16pt;
-  color: rgba(182, 155, 23, 0.961);
+.header  {
+  font-family: "Sangu",sans-serif;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: 900;
+  padding: 4px 32px;
+}
+
+ul {
   list-style-type: none;
+  display: flex;
+  margin: 0;
   padding: 0;
 }
 
-nav ul li {
-  margin-left: 50px;
-  margin-right: 50px;
+.left-links {
+  margin-left: auto;
+}
+
+.right-links {
+  margin-right: auto;
+}
+
+.links ul li a{
+  font-size: 22px;
+  padding: 50px;
+  color: rgba(182, 155, 23, 0.961);
   text-decoration: none;
-  outline: none;
 }
 
 nav ul li a:link {text-decoration: none; color: rgba(182, 155, 23, 0.961);}
 nav ul li a:visited { text-decoration: none; color: rgba(182, 155, 23, 0.961);}
 nav ul li a:hover { text-decoration: none; color: rgba(182, 155, 23, 0.961);}
 nav ul li a:active { text-decoration: none; color: rgba(182, 155, 23, 0.961);}
+
+.links ul li {
+  color: rgba(182, 155, 23, 0.961);
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-content {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-content li {
+  padding: 5px;
+}
+
+.dropdown-menu button {
+  position: fixed;
+  left: 25px;
+  top: 60px;
+  border: 2px;
+  background-color: rgba(245, 245, 245, 0);
+
+}
+
+@media (max-width: 825px) {
+  .links ul {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    padding: 10px;
+    z-index: 2;
+  }
+
+  .dropdown-content:focus {
+    display: block;
+  }
+}
+/* END OF HEADER */
+
+body {
+  margin: 0;
+}
 
 .hero {
   height: 180vh;
@@ -184,7 +251,7 @@ article p.date {
   display: flex;
   justify-content: space-evenly;
   margin: 20px;
-  padding: 20px;
+  padding: 50px;
   align-items: center;
 }
 
@@ -299,7 +366,7 @@ h1 {
   margin: 0;
 }
 
-a {
+.contact-info a {
   color: white;
   text-decoration: none;
 }
@@ -345,3 +412,6 @@ input[type="submit"] {
   height: 100%;
   z-index: 0;
 }
+
+
+
