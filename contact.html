@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VK Film and Photo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="contact">
+  <header>
+    <div class="overlay">
+      <nav class="links">
+        <ul>
+          <li><a href="./investment.html">investment</a></li>
+          <li><a href="./blog.html">blog</a></li>
+          <li><a href="./index.html"><img src="./image/logo.png" alt="Logo" width="100px" height="auto"></a></li>
+          <li><a href="./about.html">about</a></li>
+          <li><a href="./contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="title">
+    contact
+  </div>
+  <form action="send_email.php" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" name="email" required>
+    
+    <label for="message">Message:</label>
+    <textarea name="message" rows="5" required></textarea>
+    
+    <input type="submit" value="Submit">
+  </form>
+  <footer>
+    <div class="contact-info">
+        <div class="contact-item">
+          <img src="./image/phone.png" alt="Phone Icon">
+          <p>Phone: <a href="tel:3179790027">317-979-0027</a></p>
+        </div>
+        <div class="contact-item">
+          <img src="./image/email.png" alt="Email Icon">
+          <p>Email: <a href="mailto:vkstudios@gmail.com">vkstudios@gmail.com</a></p>
+        </div>
+        <div class="contact-item">
+          <img src="./image/instagram.png" alt="Instagram Icon">
+          <p>Instagram: <a href="https://www.instagram.com/vkfilmandphoto/">@vkfilmandphoto</a></p>
+        </div>
+      </div>
+    <div class="copyright">Copyright @ vk Studios 2023</div>
+  </footer>
+</body>

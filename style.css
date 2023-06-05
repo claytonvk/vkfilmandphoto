@@ -1,0 +1,329 @@
+@font-face {
+  font-family: "Sangu";
+  src: url("./fonts/Sangu/Sangu-Regular.ttf");
+}
+
+
+@font-face {
+  font-family: "Epika";
+  src: url("./fonts/Epika/NT\ Epika\ Bold\ \(PERSONAL\ USE\).otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Epika-regular";
+  src: url("./fonts/Epika/NT\ Epika\ Regular\ \(PERSONAL\ USE\).otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Epika";
+  src: url("./fonts/Epika/NT\ Epika\ Thin\ \(PERSONAL\ USE\).otf");
+  font-weight: lighter;
+}
+
+
+body {
+  margin: 0;
+}
+
+.overlay {
+  display: flex;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+}
+
+/* .overlay:hover {
+  background-color: rgba(34, 33, 33, 0.1);
+} */
+
+nav ul {
+  font-family: "Sangu", sans-serif;
+  font-size: 16pt;
+  color: rgba(182, 155, 23, 0.961);
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 50px;
+  margin-right: 50px;
+  text-decoration: none;
+  outline: none;
+}
+
+nav ul li a:link {text-decoration: none; color: rgba(182, 155, 23, 0.961);}
+nav ul li a:visited { text-decoration: none; color: rgba(182, 155, 23, 0.961);}
+nav ul li a:hover { text-decoration: none; color: rgba(182, 155, 23, 0.961);}
+nav ul li a:active { text-decoration: none; color: rgba(182, 155, 23, 0.961);}
+
+.hero {
+  height: 180vh;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.hero-image {
+  background-image: url("./image/2img.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.insta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.slider {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 25px;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  width: fit-content;
+  margin: 0;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Styling for navigation arrows (optional) */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.title {
+  font-family: "Sangu", sans-serif;
+  font-size: 55pt;
+  color: rgba(182, 155, 23, 0.961);
+  display: flex;
+  justify-content: center;
+  margin-top: 125px;
+}
+
+body {
+  font-family: "Sangu", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+main {
+  margin: 20px;
+}
+
+article {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  margin-top: 0;
+}
+
+article p.date {
+  font-style: italic;
+  color: #888888;
+}
+
+.packages {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.package {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+  align-items: center;
+}
+
+.name {
+  color: rgba(182, 155, 23, 0.961);
+}
+
+.info {
+  font-family: "Epika", sans-serif;
+  font-weight: lighter;
+  font-size: 16pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info .name {
+  font-family: "Epika-regular", sans-serif;
+  font-weight: normal;
+  font-size: 18pt;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-family: "Sangu", sans-serif;
+  font-size: 20pt;
+  color: rgba(182, 155, 23, 0.961);
+}
+
+.info .divider {
+  height: 1px;
+  min-width: 500px;
+  background-color: rgba(182, 155, 23, 0.961);
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.about {
+  display: flex;
+}
+
+.about .content {
+  align-items: center;
+}
+
+.about .content .bio {
+  font-family: "Epika", sans-serif;
+  margin-top: 30px;
+  margin-right: 10%;
+  line-height: 1.8;
+}
+
+footer {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(182, 155, 23, 0.961);
+  margin-top: 1000px;
+}
+
+.contact {
+  font-family: "Sangu", sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+.contact-info p {
+  color: white;
+}
+
+.container-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-item img {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.contact-item p {
+  font-size: 16px;
+  margin: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  color: white;
+}
+
+/* Test Form */
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
