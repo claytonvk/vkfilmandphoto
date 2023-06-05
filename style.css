@@ -281,6 +281,47 @@ article p.date {
   align-items: center;
 }
 
+.info {
+  display: flex;
+  flex-shrink: 3;
+}
+
+
+@media (max-width: 825px) {
+  .package {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 10px;
+    align-items: center;
+  }
+  .packages img {
+    width: 125px;
+    height: 125px;
+  }
+
+  .info .name {
+    font-family: "Epika-regular", sans-serif;
+    font-weight: normal;
+    font-size: 16pt;
+    margin-bottom: 20px;
+  }
+  .info .description {
+    font-size: 12pt;
+  }
+  
+  .price {
+    font-family: "Sangu", sans-serif;
+    font-size: 18pt;
+    color: rgba(182, 155, 23, 0.961);
+  }
+  
+.divider {
+    width: 200px !important;
+  }
+
+}
+
 .name {
   color: rgba(182, 155, 23, 0.961);
 }
@@ -290,6 +331,7 @@ article p.date {
   font-weight: lighter;
   font-size: 16pt;
   display: flex;
+  flex-shrink: 3;
   flex-direction: column;
   align-items: center;
 }
@@ -307,12 +349,14 @@ article p.date {
   color: rgba(182, 155, 23, 0.961);
 }
 
-.info .divider {
+.divider {
   height: 1px;
-  min-width: 500px;
+  width: 400px;
   background-color: rgba(182, 155, 23, 0.961);
   margin-top: 20px;
   margin-bottom: 0;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .about {
