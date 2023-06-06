@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VK Film and Photo</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="js/cleave.min.js"></script>
 </head>
 
 <body class="contact">
@@ -42,18 +46,38 @@
     contact
   </div>
   <form action="send_email.php" method="POST">
-    <label for="name">Name:</label>
+
+    <label for="name">name:</label>
     <input type="text" name="name" required>
     
-    <label for="email">Email:</label>
+    <label for="email">email:</label>
     <input type="email" name="email" required>
+
+    <label for="phone">phone #:</label>
+    <input type="tel" name="phone" id="phone-input" placeholder="xxx-xxx-xxxx" maxlength="14">
+
+    <label for="instagram">instagram handle:</label>
+    <input type="text" name="instagram" >
     
-    <label for="message">Message:</label>
-    <textarea name="message" rows="5" required></textarea>
+    <label for="heard">how did you hear about me?</label>
+    <textarea name="heard" rows="5" ></textarea>
+
+    <label for="package">which package are you interested in?</label>
+    <textarea name="package" rows="5" required></textarea>
+
+    <label for="who">who will be in the photos></label>
+    <textarea name="who" rows="5"></textarea>
+
+    <label for="date">do you have a shoot date in mind></label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="etc">anything you'd like to tell me :)</label>
+    <textarea name="etc" rows="5" ></textarea>
     
     <input type="submit" value="Submit">
   </form>
-  <footer>
+  <img class = "contact-lower" src="./image/contact-lower.JPG" alt="contact">
+    <footer>
     <div class="contact-info">
         <div class="contact-item">
           <img src="./image/phone.png" alt="Phone Icon">
@@ -70,4 +94,5 @@
       </div>
     <div class="copyright">Copyright @ vk Studios 2023</div>
   </footer>
+  <script src="./app.js"></script>
 </body>
