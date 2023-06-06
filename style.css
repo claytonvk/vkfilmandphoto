@@ -265,6 +265,12 @@ article p.date {
   color: #888888;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .packages {
   display: flex;
   flex-direction: column;
@@ -275,19 +281,68 @@ article p.date {
 
 .package {
   display: flex;
+  flex-wrap: wrap;
+  
   justify-content: space-evenly;
   margin: 20px;
-  padding: 50px;
+  padding: 10px;
   align-items: center;
 }
 
 .info {
   display: flex;
+  flex: 1;
   flex-shrink: 3;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.package img {
+  width: 200px;
+  height: 200px;
 }
 
 
-@media (max-width: 825px) {
+.name {
+  color: rgba(182, 155, 23, 0.961);
+  margin-top: 20px;
+}
+
+.info {
+  font-family: "Epika", sans-serif;
+  font-weight: lighter;
+  font-size: 16pt;
+  display: flex;
+  flex-shrink: 3;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info .name {
+  font-family: "Epika-regular", sans-serif;
+  font-weight: normal;
+  font-size: 18pt;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-family: "Sangu", sans-serif;
+  font-size: 24pt;
+  color: rgba(182, 155, 23, 0.961);
+}
+
+.divider {
+  height: 1px;
+  width: 400px;
+  background-color: rgba(182, 155, 23, 0.961);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+@media (max-width: 860px) {
   .package {
     display: flex;
     justify-content: space-evenly;
@@ -322,41 +377,42 @@ article p.date {
 
 }
 
-.name {
-  color: rgba(182, 155, 23, 0.961);
-}
+@media (max-width: 526px) {
+  .packages {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
 
-.info {
-  font-family: "Epika", sans-serif;
-  font-weight: lighter;
-  font-size: 16pt;
-  display: flex;
-  flex-shrink: 3;
-  flex-direction: column;
-  align-items: center;
-}
+  .package {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+  }
 
-.info .name {
-  font-family: "Epika-regular", sans-serif;
-  font-weight: normal;
-  font-size: 18pt;
-  margin-bottom: 20px;
-}
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
 
-.price {
-  font-family: "Sangu", sans-serif;
-  font-size: 20pt;
-  color: rgba(182, 155, 23, 0.961);
-}
+  .package img {
+    width: 125px;
+    height: 125px;
+  }
 
-.divider {
-  height: 1px;
-  width: 400px;
-  background-color: rgba(182, 155, 23, 0.961);
-  margin-top: 20px;
-  margin-bottom: 0;
-  margin-left: 50px;
-  margin-right: 50px;
+  .info .name {
+    font-size: 14pt;
+    margin-bottom: 10px;
+  }
+
+  .info .description {
+    font-size: 10pt;
+  }
+
+  .price {
+    font-size: 18pt;
+  }
 }
 
 .about {
