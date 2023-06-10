@@ -263,7 +263,7 @@ button {
 .insta {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 50;
 }
 
 .slider {
@@ -506,6 +506,10 @@ article p.date {
 }
 
 .about .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   align-items: center;
 }
 
@@ -563,10 +567,10 @@ h1 {
 }
 
 .contact-info {
-  margin: 50px;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .contact-item {
@@ -645,4 +649,32 @@ input[type="submit"] {
 
 .investment-page footer {
   margin-top: 200px;
+}
+
+main a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.about-button-cont {
+  display: flex;
+  justify-content: center !important;
+  text-align: cetner;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+.about-button a{
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+#about-button{
+  border: 5px transparent !important;
 }
