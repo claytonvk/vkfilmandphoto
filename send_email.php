@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $instagram = $_POST['instagram'];
   $heard = $_POST['heard'];
   $package = $_POST['package'];
+  $location = $_POST['location'];
   $who = $_POST['who'];
   $date = $_POST['date'];
   $etc = $_POST['etc'];
@@ -18,14 +19,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $subject = 'New Contact Form Submission';
   $body = "Name: $name\nEmail: $email\nPhone #: $phone\nInstagram Handle: $instagram\n
   How did you hear about me? $heard\nWhich package are you interested in? $package
-  \nWho will be in the photos? $who\nDate: $date\nAnything else? $etc";
+  \nLocation: $location\nWho will be in the photos? $who\nDate: $date\nAnything else? $etc";
+
   
-  if (mail($to, $subject, $body)) {
-    echo 'Email sent successfully';
-  } else {
-    echo 'Error sending email';
-  }
+if (mail($to, $subject, $body)) {
+  echo 'Email sent successfully';
+  echo '<script>setTimeout(function() { window.location.href = "index.html"; }, 3000);</script>';
+} else {
+  echo 'Error sending email';
+  echo '<script>setTimeout(function() { window.location.href = "index.html"; }, 3000);</script>';
 }
+
+  
+
+}
+
+
 
 ?>
 

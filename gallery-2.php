@@ -1,50 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Gallery from Folder Demo</title>
-    <style type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html,
         body {
             margin: 0;
             padding: 0;
         }
 
-        #gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .item {
-            width: 24.47%;
-            max-width: 100%;
-            margin-bottom: 10px;
-            box-sizing: border-box; /* Add this line */
-        }
-
-        .item img {
+        .gallery {
+            margin: 0 auto;
             width: 100%;
-            height: auto;
-            display: block;
+            max-width: 1200px; /* Adjust the maximum width as per your preference */
         }
 
-        .content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        .gallery-item {
+            width: calc(20% - 10px); /* Adjust the width and margin as per your preference */
+            margin: 5px; /* Adjust the width and margin as per your preference */
+            box-sizing: border-box;
+            float: left;
+        }
+
+        .gallery-item img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+
         }
     </style>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="header">
+<div class="header">
     <div class="overlay">
       <div class="dropdown-menu">
         <button class="dropdown-toggle"><img src="./image/menu.png" alt="Logo" width="50px" height="auto"></button>
         <ul class="dropdown-content"> 
           <li><a href="./investment.html">investment</a></li>
-          <li><a href="./blog.html">blog</a></li>
+          <li><a href="./blog.html">gallery</a></li>
           <li><a href="./about.html">about</a></li>
           <li><a href="./contact.html">contact</a></li>
         </ul>
@@ -52,7 +45,7 @@
       <div class="left-links links">
         <ul>
           <li><a href="./investment.html">investment</a></li>
-          <li><a href="./blog.html">blog</a></li>
+          <li><a href="./blog.html">gallery</a></li>
         </ul>
       </div>
       <div class="logo">
@@ -66,32 +59,60 @@
       </div>
     </div>
   </div>
-  <div class= "content">
-    <div class="title">
-      the mills family
-    </div>
-    <div id="gallery">
-        <?php
-        $dirname = "image/mills/";
-        $images = scandir($dirname);
-        shuffle($images);
-        $ignore = array(".", "..");
-        foreach ($images as $curimg) {
-            if (!in_array($curimg, $ignore)) {
-                echo "<div class='item'><a href='" . $dirname . $curimg . "'><img src='" . $dirname . $curimg . "' alt='' /></a></div>\n";
-            }
+  <div class="title">
+    The Warner Family
+  </div>
+  <div class="date"> June 4, 2023 </div>
+  <div class="gallery">
+    <?php
+    header("Cache-Control: no-cache, no-store, must-revalidate");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+
+    $imageDir = 'image/warner'; // Path to the image directory
+    $allowedExtensions = ['webp']; // Preferred image formats
+
+    // Get all image files from the directory
+    $images = glob($imageDir . '/*.{'.implode(',', $allowedExtensions).'}', GLOB_BRACE);
+
+    foreach ($images as $image) {
+        // Extract the file extension
+        $extension = pathinfo($image, PATHINFO_EXTENSION);
+
+        // Determine the source and type attributes based on the file extension
+        $source = $image;
+        $type = 'image/'.$extension;
+
+        // Check if WebP is supported
+        if ($extension === 'webp' && !isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
+            // Fallback to JPEG if WebP is not supported
+            $source = preg_replace('/\.webp$/i', '.jpg', $image);
+            $type = 'image/jpeg';
         }
-        ?>
-    </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
+        echo '<div class="gallery-item">';
+        echo '<picture>';
+        echo '<source srcset="' . $image . '" type="' . $type . '">';
+        echo '<img src="' . $source . '" alt="Image">';
+        echo '</picture>';
+        echo '</div>';
+    }
+
+    memory_get_usage()
+    ?>
+</div>
+    <script src="./cdnjs/masonry.pkgd.min.js"></script>
+    <script src="./cdnjs/lazysizes.min.js"></script>
+    <script src="./app.js"></script>
     <script>
-        var gallery = document.getElementById('gallery');
-        var masonry = new Masonry(gallery, {
-            itemSelector: '.item',
-            columnWidth: '.item',
-            gutter: 10,
-            percentPosition: true
+        window.addEventListener('load', function() {
+            const gallery = document.querySelector('.gallery');
+            const masonry = new Masonry(gallery, {
+                itemSelector: '.gallery-item',
+                columnWidth: '.gallery-item',
+                gutter: 10, // Adjust the gutter as per your preference
+                fitWidth: true
+            });
         });
     </script>
 </body>

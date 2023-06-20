@@ -10,7 +10,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-  <script src="js/cleave.min.js"></script>
 </head>
 
 <body class="contact">
@@ -20,7 +19,7 @@
         <button class="dropdown-toggle"><img src="./image/menu.png" alt="Logo" width="50px" height="auto"></button>
         <ul class="dropdown-content"> 
           <li><a href="./investment.html">investment</a></li>
-          <li><a href="./blog.html">blog</a></li>
+          <li><a href="./blog.html">gallery</a></li>
           <li><a href="./about.html">about</a></li>
           <li><a href="./contact.html">contact</a></li>
         </ul>
@@ -28,7 +27,7 @@
       <div class="left-links links">
         <ul>
           <li><a href="./investment.html">investment</a></li>
-          <li><a href="./blog.html">blog</a></li>
+          <li><a href="./blog.html">gallery</a></li>
         </ul>
       </div>
       <div class="logo">
@@ -57,18 +56,25 @@
     <input type="tel" name="phone" id="phone-input" placeholder="xxx-xxx-xxxx" maxlength="14">
 
     <label for="instagram">instagram handle:</label>
-    <input type="text" name="instagram" >
+    <input type="text" name="instagram" id="instagram-input" placeholder="@"/>
     
     <label for="heard">how did you hear about me?</label>
     <textarea name="heard" rows="5" ></textarea>
 
     <label for="package">which package are you interested in?</label>
-    <textarea name="package" rows="5" required></textarea>
+    <select id="package" name="package" required>
+      <option value="maui">muai - 30 min</option>
+      <option value="kauai">kauai - 1 hr</option>
+      <option value="oahu">oahu - 2 hr</option>
+    </select>
 
-    <label for="who">who will be in the photos></label>
+    <label for="location">shoot location</label>
+    <textarea name="location" rows="1" required></textarea>
+
+    <label for="who">who will be in the photos</label>
     <textarea name="who" rows="5"></textarea>
-
-    <label for="date">do you have a shoot date in mind></label>
+    
+    <label for="date">do you have a shoot date in mind</label>
     <input type="date" id="date" name="date" required>
 
     <label for="etc">anything you'd like to tell me :)</label>
@@ -76,23 +82,27 @@
     
     <input type="submit" value="Submit">
   </form>
-  <img class = "contact-lower" src="./image/contact-lower.jpg" alt="contact">
+  <div class="bottom-img">
+    <div class="empty-cont-content"></div>
+    <div class ="do-this">
+      lets do this!
+    </div>
     <footer>
-    <div class="contact-info">
-        <div class="contact-item">
-          <img src="./image/phone.png" alt="Phone Icon">
-          <p>Phone: <a href="tel:3179790027">317-979-0027</a></p>
-        </div>
-        <div class="contact-item">
-          <img src="./image/email.png" alt="Email Icon">
-          <p>Email: <a href="mailto:vkfilmandphotostudios@gmail.com">vkfilmandphotostudios@gmail.com</a></p>
-        </div>
-        <div class="contact-item">
-          <img src="./image/instagram.png" alt="Instagram Icon">
-          <p>Instagram: <a href="https://www.instagram.com/vkfilmandphoto/">@vkfilmandphoto</a></p>
+      <div class="contact-items">
+        <div class="contact-info">
+          <div class="contact-item">
+            <img src="./image/email.png" alt="Email Icon">
+            <p>Email: <a href="mailto:vkfilmandphotostudios@gmail.com">vkfilmandphotostudios@gmail.com</a></p>
+          </div>
+          <div class="contact-item">
+            <img src="./image/instagram.png" alt="Instagram Icon">
+            <p>Instagram: <a href="https://www.instagram.com/vkfilmandphoto/">@vkfilmandphoto</a></p>
+          </div>
         </div>
       </div>
-    <div class="copyright">Copyright @ vk Studios 2023</div>
-  </footer>
+      <div class="copyright">Copyright @ vk Studios 2023</div>
+    </footer>
+  </div>
   <script src="./app.js"></script>
+  <script src="js/cleave.min.js"></script>
 </body>
